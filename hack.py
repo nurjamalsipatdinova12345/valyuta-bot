@@ -4,11 +4,12 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import requests
 import sqlite3
 import os
-# BOT_TOKEN = os.getenv("BOT_TOKEN")
-# API_KEY = os.getenv("API_KEY")
+from dotenv import load_dotenv
 
-BOT_TOKEN = "8019683753:AAG3777wfNV8GYhItasAYukfsYpmtxHdcx0"
-API_KEY = "b9cf458aa935b74e87f26968"
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_KEY = os.getenv("API_KEY")
+
 
 BASE_URL = "https://v6.exchangerate-api.com/v6"
 bot = Bot(token=BOT_TOKEN)
@@ -80,13 +81,6 @@ async def currency_handler(call: types.CallbackQuery):
     )
     await call.answer()
 
-echo "# valyuta_bot" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/nurjamalsipatdinova12345/valyuta_bot.git
-git push -u origin main
 
 # 🔹 Konvertatsiya boshlash
 @dp.callback_query_handler(text= "convert")
