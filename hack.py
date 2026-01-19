@@ -16,7 +16,7 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
 
-conn = sqlite3.connect("../Python basic lessons/lessons/users.db")
+conn = sqlite3.connect("userss.db")
 cursor = conn.cursor()
 
 cursor.execute("""
@@ -116,3 +116,4 @@ async def convert_calc(message: types.Message):
 # 🔹 Botni ishga tushirish
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)
+
